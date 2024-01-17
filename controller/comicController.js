@@ -10,7 +10,17 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 const hotComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(process.env.BASE_URL);
@@ -53,6 +63,16 @@ const newComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(process.env.BASE_URL);
@@ -100,6 +120,16 @@ const trendingComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(process.env.BASE_URL);
@@ -155,7 +185,7 @@ const trendingComic = async (req, res) => {
     return res.json({
       message: "Success Retrive Data",
       data: {
-        days: list.days,
+        daily: list.days,
         weekly: list.weekly,
         all: list.all,
       },
@@ -172,6 +202,16 @@ const detailComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(`${process.env.BASE_URL}series/${req.params.slug}`);
@@ -245,6 +285,16 @@ const readComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(
@@ -295,6 +345,16 @@ const projectComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(`${process.env.BASE_URL}project/page/${req.params.page}`);
@@ -336,6 +396,16 @@ const mirrorComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(`${process.env.BASE_URL}mirror/page/${req.params.page}`);
@@ -378,6 +448,16 @@ const searchComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-gpu",
+        "--devtools=false",
+      ],
     });
     const page = await browser.newPage();
     await page.goto(
