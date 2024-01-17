@@ -10,7 +10,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 const hotComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -140,7 +140,6 @@ const trendingComic = async (req, res) => {
       let days = Array.from(
         document.querySelectorAll("#nav-home .get-lost-fucker")
       ).map((element) => {
-        // let rank = element.querySelector(".posic span").innerText;
         let thumbnail = element.querySelector("img").getAttribute("src");
         let url = element.querySelector(".fotinhofofa a").getAttribute("href");
 
@@ -154,7 +153,6 @@ const trendingComic = async (req, res) => {
       let weekly = Array.from(
         document.querySelectorAll("#nav-roi .get-lost-fucker")
       ).map((element) => {
-        // let rank = element.querySelector(".posic span").innerText;
         let thumbnail = element.querySelector("img").getAttribute("src");
         let url = element.querySelector(".fotinhofofa a").getAttribute("href");
 
@@ -168,7 +166,6 @@ const trendingComic = async (req, res) => {
       let all = Array.from(
         document.querySelectorAll("#nav-contact .get-lost-fucker")
       ).map((element) => {
-        // let rank = element.querySelector(".posic span").innerText;
         let thumbnail = element.querySelector("img").getAttribute("src");
         let url = element.querySelector(".fotinhofofa a").getAttribute("href");
 
