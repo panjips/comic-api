@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer-extra");
 const dotenv = require("dotenv");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+const { executablePath } = require("puppeteer");
 const AdblockerPlugin = require("puppeteer-extra-plugin-adblocker");
 
 dotenv.config();
@@ -10,7 +11,8 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 const hotComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -62,7 +64,8 @@ const hotComic = async (req, res) => {
 const newComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -119,7 +122,8 @@ const newComic = async (req, res) => {
 const trendingComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -198,7 +202,8 @@ const trendingComic = async (req, res) => {
 const detailComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -281,7 +286,8 @@ const detailComic = async (req, res) => {
 const readComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -341,7 +347,8 @@ const readComic = async (req, res) => {
 const projectComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -392,7 +399,8 @@ const projectComic = async (req, res) => {
 const mirrorComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -444,7 +452,8 @@ const mirrorComic = async (req, res) => {
 const searchComic = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath(),
+      headless: "new",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
