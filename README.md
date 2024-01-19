@@ -1,6 +1,6 @@
 # Comi API (DEPRECATED)
 
-Indonesian Comic Scraper build NodeJS
+Indonesian Comic Scraper build using NodeJS
 
 # How to Use
 
